@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>bot replay recorder</title>
+	<style>
+		body {
+			margin: 0;
+			font-family: Arial, sans-serif;
+			display: grid;
+			place-items: center;
+		}
+
+		#viewport {
+			border: 1px solid #444;
+			width: min(1000px, 90vw);
+			height: auto;
+			display: block;
+			background: #000;
+		}
+		a {
+
+			font-size: 14px;
+			padding: 8px 12px;
+			border-radius: 6px;
+			border: 1px solid #555;
+			background: #1f1f1f;
+			color: #eee;
+			text-decoration: none;
+            margin-top: 10px;
+		}
+
+		button:disabled,
+		a[aria-disabled="true"] {
+			opacity: 0.5;
+			pointer-events: none;
+		}
+	</style>
+</head>
+<body>
+	<h1>Bot replay recorder</h1>
+	<canvas id="viewport" width="1920" height="1080"></canvas>
+	<canvas id="captureCanvas" width="1920" height="1080" style="position: absolute; left: -9999px; opacity: 0.01;"></canvas>
+	<a id="download" href="#" download="playback.webm" aria-disabled="true">Download recording</a>
+	<p id="status">Initializing…</p>
+
+	<script src="./script.js" type="module"></script>
+</body>
+</html>
